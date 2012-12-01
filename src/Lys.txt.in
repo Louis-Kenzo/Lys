@@ -1,0 +1,722 @@
+### File header must not be modified
+### This file must be encoded into UTF-8.
+### This file comes from unicon module.
+SCIM_Generic_Table_Phrase_Library_TEXT
+VERSION_1_0
+
+### Begin Table definition.
+BEGIN_DEFINITION
+
+### An unique id to distinguish this table among others.
+### Use uuidgen to generate this kind of id.
+UUID = e4605191-4476-4339-b7a3-e0317dde1c25
+
+### A unique number indicates the version of this file.
+### For example the last modified date of this file.
+### This number must be less than 2^32.
+SERIAL_NUMBER = 20110314
+
+ICON = @SCIM_ICONDIR@/@TABLE_NAME@.png
+
+### The default name of this table
+NAME = @TABLE_NAME@
+
+### The locale specific names of this table 
+### NAME.ja = 
+
+### Supported languages of this table
+LANGUAGES = fr
+
+### Prompt string to be displayed in the status area.
+STATUS_PROMPT = FR
+
+### If true then the first candidate phrase
+### will be selected automatically during inputing.
+AUTO_SELECT = TRUE
+
+### If true then a multi wildcard will be appended
+### at the end of inputing string automatically.
+AUTO_WILDCARD = TRUE
+
+### If true then the result string will be committed to client automatically.
+### This should be used with AUTO_SELECT = TRUE.
+AUTO_COMMIT = TRUE
+
+### If true then the inputted string will be automatically splitted during inputing.
+AUTO_SPLIT = TRUE
+
+### If true then the phrases' frequencies will be adjusted dynamically.
+DYNAMIC_ADJUST = TRUE
+
+### If true then the preedit area will be filled up by the current candidate phrase automatically.
+AUTO_FILL = TRUE
+
+### If true then the lookup table will always be shown if there is any candidate phrase.
+### Otherwise the lookup table won't be shown unless the user requires it by moving the preedit caret left.
+ALWAYS_SHOW_LOOKUP = TRUE
+
+### Use full width punctuation by default
+DEF_FULL_WIDTH_PUNCT = FALSE
+
+### Use full width letter by default
+DEF_FULL_WIDTH_LETTER = FALSE
+
+### The maximum length of a key.
+MAX_KEY_LENGTH = 50
+
+### Valid input chars.
+VALID_INPUT_CHARS = aàâbcçdeéèêëfghiîïjklmnoôpqrstuùüvwxyÿzAÀÂBCÇDEÉÈÊËFGHIÎÏJKLMNOÔPQRSTUÙÜVWXYŸZ0123456789.,:;?!"'`-#%*_/\()[]{}=|@&$^<>'-`"
+
+### Single wildcard char, can have multiple chars.
+### SINGLE_WILDCARD_CHAR = ?
+
+### Multi wildcard char.
+### MULTI_WILDCARD_CHAR = *
+
+### The key strokes to split inputted string.
+### SPLIT_KEYS = quoteright
+
+### The key strokes to commit the convert result to client.
+COMMIT_KEYS = space
+
+### The key strokes to forward the inputted string to client.
+FORWARD_KEYS = Return
+
+### The key strokes to select candidiate phrases.
+SELECT_KEYS = 1,2,3,4,5,6,7,8,9,0
+
+### The key strokes to page up the lookup table.
+PAGE_UP_KEYS = Page_Up
+
+### The key strokes to page down the lookup table.
+PAGE_DOWN_KEYS = Page_Down
+
+END_DEFINITION
+
+### Begin Table data.
+BEGIN_TABLE
+
+`a	à
+^a	â
+,c	ç
+'e	é
+`e	è
+^e	ê
+"e	ë
+"i	ï
+^i	î
+^o	ô
+`u	ù
+"u	ü
+^u	û
+"y	ÿ
+
+`A	À
+^A	Â
+,C	Ç
+'E	É
+`E	È
+^E	Ê
+"E	Ë
+"I	Ï
+^I	Î
+^O	Ô
+`U	Ù
+"U	Ü
+"Y	Ÿ
+
+\-A	Ā
+\-a	ā
+\-E	Ē
+\-e	ē
+\-I	Ī
+\-i	ī
+\-O	Ō
+\-o	ō
+\-U	Ū
+\-u	ū
+
+\espace-fine-insécable	 
+\efi	 
+\espace-fine-mot	 
+\efm	 
+\guillemet-ouvrant	« 
+\guillemet-fermant	 »
+\"	« 
+\"	 »
+'	’
+<<	« 
+>>	 »
+!	 !
+?	 ?
+:	 :
+;	 ;
+
+,	,
+"	"
+'	'
+`	`
+^	^
+_	_
+\	\
+<	<
+>	>
+
+\tiret-long	—
+\tiret-moyen	–
+\tiret-court	-
+\barre-horizontale	―
+-	-
+--	–
+---	—
+----	―
+
+\ae	æ
+\Ae	Æ
+\oe	œ
+\Oe	Œ
+
+\alpha	α
+\beta		β
+\gamma	γ
+\delta	δ
+\epsilon	ε
+\zeta	ζ
+\eta	η
+\theta	θ
+\iota	ι
+\kappa	κ
+\lamba	λ
+\mu	μ
+\nu	ν
+\xi		ξ
+\omicron	ο
+\pi	π
+\rho	ρ
+\sigma	σ
+\sigma-final	ς
+\tau	τ
+\upsilon	υ
+\phi	φ
+\chi	χ
+\psi	ψ
+\omega	ω
+
+\Alpha	Α
+\Beta		Β
+\Gamma	Γ
+\Delta	Δ
+\Epsilon	Ε
+\Zeta	Ζ
+\Eta	Η
+\Theta	Θ
+\Iota	Ι
+\Kappa	Κ
+\Lamba	Λ
+\Mu	Μ
+\Nu	Ν
+\Xi		Ξ
+\Omicron	Ο
+\Pi	Π
+\Rho	Ρ
+\Sigma	Σ
+\Tau	Τ
+\Upsilon	Υ
+\Phi	Φ
+\Chi	Χ
+\Psi	Ψ
+\Omega	Ω
+
+\eszett	ß
+
+\micro	µ
+\degré-Celsius	°C
+
+\cent	¢
+\euro	€
+\yen	¥
+\en	円
+\livre-sterling	£
+
+\pied-de-mouche	¶
+\section	§
+\!inversé	¡
+\point-d'exclamation-inversé	¡
+\numéro	№
+\degré	°
+\puce	•
+\point-médian	·
+\?-inversé	¿
+\point-d'interrogation-inversé	¿
+\point-d'ironie	¿
+\point-exclarrogatif	‽
+\!?	‽
+\?!	‽
+\...	…
+\points-de-suspension	…
+
+\parceque	∵
+\par-conséquent	∴
+\quart	¼
+\demi	½
+\trois-quarts	¾
+\carré	²
+\cube	³
+\plus-ou-moins	±
+\multiplié	×
+\divisé	÷
+\adjoint	†
+\racine	√
+\racine-carrée	√
+\racine-cubique	∛
+\racine-quatrième	∜
+\vrai	⊤
+\tautologie	⊤
+\faux	⊥
+\contradiction	⊥
+\perpendiculaire	⊥
+\orthogonal	⊥
+\losange	◊
+\losange-plein	⧫
+\losange-moyen	⬧
+\losange-plein-moyen	⬨
+\losange-petit	⬪
+\losange-plein-petit	⬫
+\carré	□
+\carré-plein	■
+\carré-plein-petit	▪
+\carré-petit	▫
+\carré-arrondi	▢
+\grille	▦
+\carré-strié-horizontalement	▤
+\carré-strié-verticalement	▥
+\carré-debout-plein	◆
+\carré-debout	◇
+\triangle-plein	▲
+\triangle	△
+\triangle-plein-petit	▴
+\triangle-petit	▵
+\triangle-droite-plein	▶
+\triangle-droite	▷
+\triangle-droite-plein-petit	▸
+\triangle-droite-petit	▹
+\triangle-droite-plein-long	►
+\triangle-droite-long	▻
+\triangle-bas-plein	▼
+\triangle-bas	▽
+\triangle-bas-plein-petit	▾
+\triangle-bas-petit	▿
+\triangle-gauche-plein	◀
+\triangle-gauche	◁
+\triangle-gauche-plein-petit	◂
+\triangle-gauche-petit	◃
+\triangle-gauche-plein-long	◄
+\triangle-gauche-long	◅
+\triangle-rectangle-haut-gauche	◸
+\triangle-rectangle-haut-droite	◹
+\triangle-rectangle	◺
+\cercle	○
+\cercle-pointillé	◌
+\cercle-plein	●
+\cercle-strié-verticalement	◍
+\cercle-dans-cercle	◎
+\cercle-grand	◯
+\flèche-gauche	←
+\flèche-gauche-longue ⟵
+\flèche-droite	→
+\flèche-droite-longue ⟶
+\flèche-haut	↑
+\flèche-bas	↓
+\fleche-gauche	←
+\fleche-gauche-longue ⟵
+\fleche-droite	→
+\fleche-droite-longue ⟶
+\fleche-haut	↑
+\fleche-bas	↓
+\implique	⇒
+\équivaut-à	⇔
+\équivaut	⇔
+\equivaut-à	⇔
+\equivaut	⇔
+\infère	⊢
+\infèrence	⊢
+\non	¬
+\ou	∧
+\et	∨
+\pour-tout	∀
+\soit	∀
+\appartient-à	∈
+\dans	∈
+\appartient-pas-à	∉
+\pas-dans	∉
+\contient	∋
+\contient-pas	∋
+\il-existe	∃
+\existe	∃
+\il-n'existe-pas	∄
+\existe-pas	∄
+\nabla	∇
+\ensemble-nul	∅
+\ensemble-vide	∅
+\vide	∅
+\CQFD	∎
+\Somme	∑
+\Produit	∏
+\proportionnel-à	∝
+\proportionnel-à	~
+\proportionnel	∝
+\infini	∞
+\angle	∠
+\angle-mesuré	∡
+\angle-sphérique	∢
+\parallèle-à	∥
+\parallèle	∥
+\pas-parallèle	∦
+\Et	∧
+\Ou	∨
+\Intersection	∩
+\Union	∪
+\Intégrale	∫
+\Intégrale-double	∬
+\Intégrale-triple	∭
+\Intégrale-curviligne	∮
+\Intégrale-double-curviligne	∯
+\Intégrale-triple-curviligne	∰
+\Intégrale-curviligne-direct	∳
+\Intégrale-curviligne-indirect	∲
+\Integrale	∫
+\Integrale-double	∬
+\Integrale-triple	∭
+\Integrale-curviligne	∮
+\Integrale-double-curviligne	∯
+\Integrale-triple-curviligne	∰
+\Integrale-curviligne-direct	∳
+\Integrale-curviligne-indirect	∲
+\approximativement-égal	≅
+\à-peu-près-égal-à	≅
+\a-peu-près-égal-à	≅
+\congru-à	≡
+\congru	≡
+\identique	≡
+\<=	≤
+\>=	≥
+\dominé-par	≪
+\dominé	≪
+\domine	≫
+\dominé-par	O
+\dominé	O
+\négligeable-devant	o
+\négligeable	o
+\negligeable-devant	o
+\negligeable	o
+\inclus-dans	⊂
+\inclus	⊂
+\inclus-ou-égal	⊆
+\inclus-égal	⊆
+\incluant	⊃
+\incluant-ou-égal	⊇
+\incluant-égal	⊇
+\somme-directe	⊕
+
+\entiers-naturels	ℕ
+\naturels	ℕ
+\entiers	ℤ
+\entiers-relatifs	ℤ
+\décimaux	ⅅ
+\decimaux	ⅅ
+\rationnels	ℚ
+\réels	ℝ
+\reels	ℝ
+\complexes	ℂ
+
+\doubleA	𝔸
+\doubleB	𝔹
+\doubleC	ℂ
+\doubleD	ⅅ
+\doubleE	𝔼
+\doubleF	𝔽
+\doubleG	𝔾
+\doubleH	ℍ
+\doubleI	𝕀
+\doubleJ	𝕁
+\doubleK	𝕂
+\doubleL	𝕃
+\doubleM	𝕄
+\doubleN	ℕ
+\doubleO	𝕆
+\doubleP	ℙ
+\doubleQ	ℚ
+\doubleR	ℝ
+\doubleS	𝕊
+\doubleT	𝕋
+\doubleU	𝕌
+\doubleV	𝕍
+\doubleW	𝕎
+\doubleX	𝕏
+\doubleY	𝕐
+\doubleZ	ℤ
+
+\scriptA	𝒜
+\scriptB	ℬ
+\scriptC	𝒞
+\scriptD	𝒟
+\scriptE	ℰ
+\scriptF	ℱ
+\scriptG	𝒢
+\scriptH	ℋ
+\scriptI	ℐ
+\scriptJ	𝒥
+\scriptK	𝒦
+\scriptL	ℒ
+\scriptM	ℳ
+\scriptN	𝒩
+\scriptO	𝒪
+\scriptP	𝒫
+\scriptQ	𝒬
+\scriptR	ℛ
+\scriptS	𝒮
+\scriptT	𝒯
+\scriptU	𝒰
+\scriptV	𝒱
+\scriptW	𝒲
+\scriptX	𝒳
+\scriptY	𝒴
+\scriptZ	𝒵
+
+\gothiqueA	𝔄
+\gothiqueB	𝔅
+\gothiqueC	ℭ
+\gothiqueD	𝔇
+\gothiqueE	𝔈
+\gothiqueF	𝔉
+\gothiqueG	𝔊
+\gothiqueH	ℌ
+\gothiqueI	ℑ
+\gothiqueJ	𝔍
+\gothiqueK	𝔎
+\gothiqueL	𝔏
+\gothiqueM	𝔐
+\gothiqueN	𝔑
+\gothiqueO	𝔒
+\gothiqueP	𝔓
+\gothiqueQ	𝔔
+\gothiqueR	ℜ
+\gothiqueS	𝔖
+\gothiqueT	𝔗
+\gothiqueU	𝔘
+\gothiqueV	𝔙
+\gothiqueW	𝔚
+\gothiqueX	𝔛
+\gothiqueY	𝔜
+\gothiqueZ	ℨ
+
+\pour-mille	‰
+\pour-dix-mille	‱
+\paragraphe	§
+\tm	™
+\copyright	©
+\registered	®
+\coeur-exclamation	❣
+\!coeur	❣
+\point-d'exclamation-coeur	❣
+\coeur-plein	♥
+\coeur-ligne	♡
+\coeur-large	❤
+\coeur-droite	❥
+\obélus	÷
+\dague	†
+\dague-double	‡
+\obèle	†
+\obèle-double	‡
+\obele	†
+\obele-double	‡
+\croix	†
+\croix-latine	✟
+\croix-de-Lorraine	☨
+\astérisme	⁂
+\asterisme	⁂
+\coeur-floral	❦
+\coeur-floral-droite	☙
+\coeur-floral-gauche	❧
+\index	☞
+\index-droite	☞
+\index-haut	☝
+\index-bas	☞
+\index-gauche	☟
+\index-gauche-plein	☚
+\index-droite-plein	☛
+\note-croche-simple	♪
+\note-croche	♫
+\note-double-deux	♬
+\note-noire	♩
+\tirant-souscrit	‿
+\tirant-en-chef	⁀
+\dos-d'âne-souscrit	⁔
+\dos-d'âne	⁔
+\fleur	❀
+\fleur-astérisque	⁕
+\fleur-bouquet	⚘
+\bouquet	⚘
+\montre	⌚
+\horloge	⌚
+\temps	⌚
+\cible	◎
+\ciseaux	✄
+\avion	✈
+\enveloppe	✉
+\victoire	✌
+\écriture	✍
+\en-train-d'écrire	✍
+\crayon	✎
+\oui	✓
+\cocher-oui	✓
+\vrai	✓
+\oui-gras	✔
+\cocher-oui-gras	✔
+\vrai-gras	✔
+\non	✗
+\cocher-non	✗
+\faux	✗
+\non-gras	✘
+\cocher-non-gras	✘	
+\faux	-gras	✘
+\croix-chrétienne	✚
+\croix-rouge	✚
+\croix-maltaise	✠
+\croix-arrondie	✤
+\étoile-de-david	✡
+\étoile-à-6-branches	✡
+\étoile-à-5-branches	✭
+\étoile-à-5-branches-ombre	✰
+\étoile-à-5-branches-petite	✩
+\étoile-à-5-branches-américaine	✪
+\étoile-à-5-branches-pleine	✯
+\étoile-à-beaucoup-de-branches	✵
+\etoile-de-david	✡
+\etoile-à-6-branches	✡
+\etoile-à-5-branches	✭
+\etoile-à-5-branches-ombre	✰
+\etoile-à-5-branches-petite	✩
+\etoile-à-5-branches-américaine	✪
+\etoile-à-5-branches-pleine	✯
+\etoile-à-beaucoup-de-branches	✵
+\fleur-à-5-pétales-pleine	✿
+\fleur-à-5-pétales		❀
+\fleur-à-beaucoup-de-pétales	❁
+\flèche	➳
+\fleche	➳
+
+^0	⁰
+^1	¹
+^2	²
+^3	³
+^4	⁴
+^5	⁵
+^6	⁶
+^7	⁷
+^8	⁸
+^9	⁹
+^+	⁺
+^-	⁻
+^=	⁼
+^(	⁽
+^)	⁾
+^i	ⁱ
+^n	ⁿ
+
+_0	₀
+_1	₁
+_2	₂
+_3	₃
+_4	₄
+_5	₅
+_6	₆
+_7	₇
+_8	₈
+_9	₉
+_+	₊
+_-	₋
+_=	₌
+_(	₍
+_)	₎
+_a	ₐ
+_e	ₑ
+_o	ₒ
+_x	ₓ
+_schwa	ₔ
+
+\0-cerclé	⓪
+\1-cerclé	①
+\2-cerclé	②
+\3-cerclé	③
+\4-cerclé	④
+\5-cerclé	⑤
+\6-cerclé	⑥
+\7-cerclé	⑦
+\8-cerclé	⑧
+\9-cerclé	⑨
+\10-cerclé	⑩
+\11-cerclé	⑪
+\12-cerclé	⑫
+\13-cerclé	⑬
+\14-cerclé	⑭
+\15-cerclé	⑮
+\16-cerclé	⑯
+\17-cerclé	⑰
+\18-cerclé	⑱
+\19-cerclé	⑲
+\20-cerclé	⑳
+\A-cerclé	Ⓐ
+\B-cerclé	Ⓑ
+\C-cerclé	Ⓒ
+\D-cerclé	Ⓓ
+\E-cerclé	Ⓔ
+\F-cerclé	Ⓕ
+\G-cerclé	Ⓖ
+\H-cerclé	Ⓗ
+\I-cerclé	Ⓘ
+\J-cerclé	Ⓙ
+\K-cerclé	Ⓚ
+\L-cerclé	Ⓛ
+\M-cerclé	Ⓜ
+\N-cerclé	Ⓝ
+\O-cerclé	Ⓞ
+\P-cerclé	Ⓟ
+\Q-cerclé	Ⓠ
+\R-cerclé	Ⓡ
+\S-cerclé	Ⓢ
+\T-cerclé	Ⓣ
+\U-cerclé	Ⓤ
+\V-cerclé	Ⓥ
+\W-cerclé	Ⓦ
+\X-cerclé	Ⓧ
+\Y-cerclé	Ⓨ
+\Z-cerclé	Ⓩ
+\a-cerclé	ⓐ
+\b-cerclé	ⓑ
+\c-cerclé	ⓒ
+\d-cerclé	ⓓ
+\e-cerclé	ⓔ
+\f-cerclé	ⓕ
+\g-cerclé	ⓖ
+\h-cerclé	ⓗ
+\i-cerclé	ⓘ
+\j-cerclé	ⓙ
+\k-cerclé	ⓚ
+\l-cerclé	ⓛ
+\m-cerclé	ⓜ
+\n-cerclé	ⓝ
+\o-cerclé	ⓞ
+\p-cerclé	ⓟ
+\q-cerclé	ⓠ
+\e-cerclé	ⓡ
+\s-cerclé	ⓢ
+\t-cerclé	ⓣ
+\u-cerclé	ⓤ
+\v-cerclé	ⓥ
+\w-cerclé	ⓦ
+\x-cerclé	ⓧ
+\y-cerclé	ⓨ
+\z-cerclé	ⓩ
+
+END_TABLE

@@ -1,0 +1,655 @@
+―――――――――――――――――――――――― Lys, beautiful French typography
+
+―――――――――――― What is it ?
+An input method for SCIM that enables users to easily type according to the 
+rules of French typography and input many useful or pretty Unicode characters.
+
+Examples (for better results, view with a proportional font with good Unicode 
+support) :
+* Lys can be used to insert thin non-breaking spaces before semicolons ; 
+* Tout types d’accents : Noël, été, règle, bête, ...
+* Ligatures are possible, as in œuf or ex æquo. Æ and Œ too.
+* « Citations de premier ordre, et: "citation de deuxième ordre" »
+* ¶
+* αξγΩπ
+* ♥♫♩✎
+* x²y⁷zⁱ
+* ∀x∈ℝ  E⊆F
+* Vrai ✔ et faux ✗
+
+―――――――――――― Prerequisites
+* A Linux distribution.
+
+―――――――――――― Installation
+Just type « sudo make install » from this directory ; it will copy the binary 
+table file to /usr/share/scim/tables and the icon to /usr/share/scim/icons. 
+Restart X and Lys should be available from SCIM right away.
+
+If SCIM is not installed, install it by running
+	sudo apt-get install scim scim-bridge scim-bridge-agent scim-bridge-client-gtk scim-gtk2-immodule im-switch
+from a terminal window. Then, setup your system to use scim as an input method 
+engine by running, still in a terminal window :
+	im-switch -s scim-bridge
+Finally, restart X by hitting ctrl+alt+backspace ; if that does not work reboot 
+your computer instead.
+
+―――――――――――― How to use it 
+Lys works by substituting specific sequences of characters for others. When a 
+sequence of typed characters is a prefix of more than one substitution target, 
+all the possible subsitutions are listed by scim. Lys is configured by default 
+to auto-select the first result and auto-commit it ; so if the first result is
+the right one and you press space (Lys’ default commit key) you. To prevent a 
+substitution from happening and reverse the selected substitution, Lys uses 
+Return by default. For advanced users, those shortcuts can be cutomized easily 
+by editing src/Lys.txt.in.
+
+Note if you’ve never used SCIM : you can activate the SCIM toolbar by default by
+hiting ctrl+space. There, you’ll be able to access the SCIM setup menu. If you 
+wish to switch between input methods (IM) easily, the default shortcut is to 
+press ctrl+shift and release shift first for the next IM, or ctrl first for the 
+previous one. Those shortcuts can be changed in the SCIM setup menu ; I use 
+ctrl+space to switch to the next IM, and no shortut to trigger SCIM, which fits
+my SCIM always present use (cycling between English/European, Lys and Anthy 
+IMs).
+
+Here is the full list of substitution pairs:
+# Accented lowercase letters
+`a	à
+^a	â
+,c	ç
+'e	é
+`e	è
+^e	ê
+"e	ë
+"i	ï
+^i	î
+^o	ô
+`u	ù
+"u	ü
+"y	ÿ
+
+# Accented capital letters
+`A	À
+^A	Â
+,C	Ç
+'E	É
+`E	È
+^E	Ê
+"E	Ë
+"I	Ï
+^I	Î
+^O	Ô
+`U	Ù
+"U	Ü
+"Y	Ÿ
+
+# Spaces
+\espace_fine_insécable	 
+\efi	 
+\espace_fine_mot	 
+\efm	 
+
+# Quotation marks
+\guillemet_ouvrant	« 
+\guillemet_fermant	 »
+\"	« 
+\"	 »
+<<	« 
+>>	 »
+
+# Punctuation
+'	’
+\pied_de_mouche	¶
+\section	§
+\!inversé	¡
+\point_d'exclamation_inversé	¡
+\numéro	№
+\degré	°
+\puce	•
+\point_médian	·
+\?_inversé	¿
+\point_d'interrogation_inversé	¿
+\point_d'ironie	¿
+\point_exclarrogatif	‽
+\!?	‽
+\?!	‽
+
+# Escape input characters (added to provide an easy way to avoid subsitution)
+!	 !
+?	 ?
+:	 :
+;	 ;
+,	,
+"	"
+^	^
+_	_
+\	\
+<	<
+>	>
+
+# Dashes
+\tiret_court	-
+\tiret_moyen	–
+\tiret_long	—
+\barre_horizontale	―
+-	-
+--	–
+---	—
+----	―
+
+# Ligatures
+\ae	æ
+\Ae	Æ
+\oe	œ
+\Oe	Œ
+
+# Lowercase greek letters
+\alpha	α
+\beta		β
+\gamma	γ
+\delta	δ
+\epsilon	ε
+\zeta	ζ
+\eta	η
+\theta	θ
+\iota	ι
+\kappa	κ
+\lamba	λ
+\mu	μ
+\nu	ν
+\xi		ξ
+\omicron	ο
+\pi	π
+\rho	ρ
+\sigma	σ
+\sigma_final	ς
+\tau	τ
+\upsilon	υ
+\phi	φ
+\chi	χ
+\psi	ψ
+\omega	ω
+# Capital greek letters
+\Alpha	Α
+\Beta		Β
+\Gamma	Γ
+\Delta	Δ
+\Epsilon	Ε
+\Zeta	Ζ
+\Eta	Η
+\Theta	Θ
+\Iota	Ι
+\Kappa	Κ
+\Lamba	Λ
+\Mu	Μ
+\Nu	Ν
+\Xi		Ξ
+\Omicron	Ο
+\Pi	Π
+\Rho	Ρ
+\Sigma	Σ
+\Tau	Τ
+\Upsilon	Υ
+\Phi	Φ
+\Chi	Χ
+\Psi	Ψ
+\Omega	Ω
+
+# SI
+\micro	µ
+\degré_Celsius	°C
+
+# Currency symbols
+\cent	¢
+\euro	€
+\yen	¥
+\en	円
+\livre_sterling	£
+
+# German letters
+\eszett	ß
+
+# Miscellaneous symbols
+\pour_mille	‰
+\pour_dix_mille	‱
+\paragraphe	§
+\tm	™
+\copyright	©
+\registered	®
+\oui	✓
+\cocher_oui	✓
+\vrai	✓
+\oui_gras	✔
+\cocher_oui_gras	✔
+\vrai_gras	✔
+\non	✗
+\cocher_non	✗
+\faux	✗
+\non_gras	✘
+\cocher_non_gras	✘	
+\faux_gras	✘
+\coeur_exclamation	❣
+\!coeur	❣
+\point_d'exclamation_coeur	❣
+\coeur_plein	♥
+\coeur_ligne	♡
+\coeur_large	❤
+\coeur_droite	❥
+\obélus	÷
+\dague	†
+\dague_double	‡
+\obèle	†
+\obèle_double	‡
+\croix	†
+\croix_latine	✟
+\croix_de_Lorraine	☨
+\astérisme	⁂
+\coeur_floral	❦
+\coeur_floral_droite	☙
+\coeur_floral_gauche	❧
+\index	☞
+\index_droite	☞
+\index_haut	☝
+\index_bas	☞
+\index_gauche	☟
+\index_gauche_plein	☚
+\index_droite_plein	☛
+\note_croche_simple	♪
+\note_croche	♫
+\note_double_deux	♬
+\note_noire	♩
+\tirant_souscrit	‿
+\tirant_en_chef	⁀
+\dos_d'âne_souscrit	⁔
+\dos_d'âne	⁔
+\fleur	❀
+\fleur_astérisque	⁕
+\fleur_bouquet	⚘
+\bouquet	⚘
+\montre	⌚
+\cible	◎
+\ciseaux	✄
+\avion	✈
+\enveloppe	✉
+\victoire	✌
+\écriture	✍
+\en_train_d'écrire	✍
+\crayon	✎
+\croix_chrétienne	✚
+\croix_rouge	✚
+\croix_maltaise	✠
+\croix_arrondie	✤
+\étoile_de_david	✡
+\étoile_à_6_branches	✡
+\étoile_à_5_branches	✭
+\étoile_à_5_branches_ombre	✰
+\étoile_à_5_branches_petite	✩
+\étoile_à_5_branches_américaine	✪
+\étoile_à_5_branches_pleine	✯
+\étoile_à_beaucoup_de_branches	✵
+\fleur_à_5_pétales_pleine	✿
+\fleur_à_5_pétales		❀
+\fleur_à_beaucoup_de_pétales	❁
+\flèche	➳
+
+# Mathematical symbols
+\parceque	∵
+\par_conséquent	∴
+\quart	¼
+\demi	½
+\trois_quarts	¾
+\carré	²
+\cube	³
+\plus_ou_moins	±
+\multiplié	×
+\divisé	÷
+\adjoint	†
+\racine	√
+\racine_carrée	√
+\racine_cubique	∛
+\racine_quatrième	∜
+\vrai	⊤
+\tautologie	⊤
+\faux	⊥
+\contradiction	⊥
+\perpendiculaire	⊥
+\orthogonal	⊥
+\losange	◊
+\losange_plein	⧫
+\losange_moyen	⬧
+\losange_plein_moyen	⬨
+\losange_petit	⬪
+\losange_plein_petit	⬫
+\carré	□
+\carré_plein	■
+\carré_plein_petit	▪
+\carré_petit	▫
+\carré_arrondi	▢
+\grille	▦
+\carré_strié_horizontalement	▤
+\carré_strié_verticalement	▥
+\carré_debout_plein	◆
+\carré_debout	◇
+\triangle_plein	▲
+\triangle	△
+\triangle_plein_petit	▴
+\triangle_petit	▵
+\triangle_droite_plein	▶
+\triangle_droite	▷
+\triangle_droite_plein_petit	▸
+\triangle_droite_petit	▹
+\triangle_droite_plein_long	►
+\triangle_droite_long	▻
+\triangle_bas_plein	▼
+\triangle_bas	▽
+\triangle_bas_plein_petit	▾
+\triangle_bas_petit	▿
+\triangle_gauche_plein	◀
+\triangle_gauche	◁
+\triangle_gauche_plein_petit	◂
+\triangle_gauche_petit	◃
+\triangle_gauche_plein_long	◄
+\triangle_gauche_long	◅
+\triangle_rectangle_haut_gauche	◸
+\triangle_rectangle_haut_droite	◹
+\triangle_rectangle	◺
+\cercle	○
+\cercle_pointillé	◌
+\cercle_plein	●
+\cercle_strié_verticalement	◍
+\cercle_dans_cercle	◎
+\cercle_grand	◯
+\flèche_gauche	←
+\flèche_droite	→
+\flèche_haut	↑
+\flèche_bas	↓
+\implique	⇒
+\équivaut_à	⇔
+\équivaut	⇔
+\infère	⊢
+\infèrence	⊢
+\non	¬
+\ou	∧
+\et	∨
+\pour_tout	∀
+\soit	∀
+\appartient_à	∈
+\dans	∈
+\appartient_pas_à	∉
+\pas_dans	∉
+\contient	∋
+\contient_pas	∋
+\il_existe	∃
+\existe	∃
+\il_n'existe_pas	∄
+\existe_pas	∄
+\nabla	∇
+\ensemble_nul	∅
+\ensemble_vide	∅
+\vide	∅
+\CQFD	∎
+\Somme	∑
+\Produit	∏
+\proportionnel_à	∝
+\proportionnel_à	~
+\proportionnel	∝
+\infini	∞
+\angle	∠
+\angle_mesuré	∡
+\angle_sphérique	∢
+\parallèle_à	∥
+\parallèle	∥
+\pas_parallèle	∦
+\Et	∧
+\Ou	∨
+\Intersection	∩
+\Union	∪
+\Intégrale	∫
+\Intégrale_double	∬
+\Intégrale_triple	∭
+\Intégrale_curviligne	∮
+\Intégrale_double_curviligne	∯
+\Intégrale_triple_curviligne	∰
+\Intégrale_curviligne_direct	∳
+\Intégrale_curviligne_indirect	∲
+\approximativement_égal	≅
+\à_peu_près_égal_à	≅
+\congru_à	≡
+\congru	≡
+\identique	≡
+\<=	≤
+\>=	≥
+\dominé_par	≪
+\dominé	≪
+\domine	≫
+\dominé_par	O
+\dominé	O
+\négligeable_devant	o
+\négligeable	o
+\inclus_dans	⊂
+\inclus	⊂
+\inclus_ou_égal	⊆
+\inclus_égal	⊆
+\incluant	⊃
+\incluant_ou_égal	⊇
+\incluant_égal	⊇
+\somme_directe	⊕
+# Number sets
+\entiers_naturels	ℕ
+\naturels	ℕ
+\entiers	ℤ
+\entiers_relatifs	ℤ
+\décimaux	ⅅ
+\rationnels	ℚ
+\réels	ℝ
+\complexes	ℂ
+# Doubled leters for mathematics
+\doubleA	𝔸
+\doubleB	𝔹
+\doubleC	ℂ
+\doubleD	ⅅ
+\doubleE	𝔼
+\doubleF	𝔽
+\doubleG	𝔾
+\doubleH	ℍ
+\doubleI	𝕀
+\doubleJ	𝕁
+\doubleK	𝕂
+\doubleL	𝕃
+\doubleM	𝕄
+\doubleN	ℕ
+\doubleO	𝕆
+\doubleP	ℙ
+\doubleQ	ℚ
+\doubleR	ℝ
+\doubleS	𝕊
+\doubleT	𝕋
+\doubleU	𝕌
+\doubleV	𝕍
+\doubleW	𝕎
+\doubleX	𝕏
+\doubleY	𝕐
+\doubleZ	ℤ
+# Script letters for mathematics
+\scriptA	𝒜
+\scriptB	ℬ
+\scriptC	𝒞
+\scriptD	𝒟
+\scriptE	ℰ
+\scriptF	ℱ
+\scriptG	𝒢
+\scriptH	ℋ
+\scriptI	ℐ
+\scriptJ	𝒥
+\scriptK	𝒦
+\scriptL	ℒ
+\scriptM	ℳ
+\scriptN	𝒩
+\scriptO	𝒪
+\scriptP	𝒫
+\scriptQ	𝒬
+\scriptR	ℛ
+\scriptS	𝒮
+\scriptT	𝒯
+\scriptU	𝒰
+\scriptV	𝒱
+\scriptW	𝒲
+\scriptX	𝒳
+\scriptY	𝒴
+\scriptZ	𝒵
+# Blackletter script for mathematics
+\gothiqueA	𝔄
+\gothiqueB	𝔅
+\gothiqueC	ℭ
+\gothiqueD	𝔇
+\gothiqueE	𝔈
+\gothiqueF	𝔉
+\gothiqueG	𝔊
+\gothiqueH	ℌ
+\gothiqueI	ℑ
+\gothiqueJ	𝔍
+\gothiqueK	𝔎
+\gothiqueL	𝔏
+\gothiqueM	𝔐
+\gothiqueN	𝔑
+\gothiqueO	𝔒
+\gothiqueP	𝔓
+\gothiqueQ	𝔔
+\gothiqueR	ℜ
+\gothiqueS	𝔖
+\gothiqueT	𝔗
+\gothiqueU	𝔘
+\gothiqueV	𝔙
+\gothiqueW	𝔚
+\gothiqueX	𝔛
+\gothiqueY	𝔜
+\gothiqueZ	ℨ
+
+# Superscript characters
+^0	⁰
+^1	¹
+^2	²
+^3	³
+^4	⁴
+^5	⁵
+^6	⁶
+^7	⁷
+^8	⁸
+^9	⁹
+^+	⁺
+^-	⁻
+^=	⁼
+^(	⁽
+^)	⁾
+^i	ⁱ
+^n	ⁿ
+
+# Subscript characters
+_0	₀
+_1	₁
+_2	₂
+_3	₃
+_4	₄
+_5	₅
+_6	₆
+_7	₇
+_8	₈
+_9	₉
+_+	₊
+_-	₋
+_=	₌
+_(	₍
+_)	₎
+_a	ₐ
+_e	ₑ
+_o	ₒ
+_x	ₓ
+_schwa	ₔ
+
+# Circled characters
+\0_cerclé	⓪
+\1_cerclé	①
+\2_cerclé	②
+\3_cerclé	③
+\4_cerclé	④
+\5_cerclé	⑤
+\6_cerclé	⑥
+\7_cerclé	⑦
+\8_cerclé	⑧
+\9_cerclé	⑨
+\10_cerclé	⑩
+\11_cerclé	⑪
+\12_cerclé	⑫
+\13_cerclé	⑬
+\14_cerclé	⑭
+\15_cerclé	⑮
+\16_cerclé	⑯
+\17_cerclé	⑰
+\18_cerclé	⑱
+\19_cerclé	⑲
+\20_cerclé	⑳
+\A_cerclé	Ⓐ
+\B_cerclé	Ⓑ
+\C_cerclé	Ⓒ
+\D_cerclé	Ⓓ
+\E_cerclé	Ⓔ
+\F_cerclé	Ⓕ
+\G_cerclé	Ⓖ
+\H_cerclé	Ⓗ
+\I_cerclé	Ⓘ
+\J_cerclé	Ⓙ
+\K_cerclé	Ⓚ
+\L_cerclé	Ⓛ
+\M_cerclé	Ⓜ
+\N_cerclé	Ⓝ
+\O_cerclé	Ⓞ
+\P_cerclé	Ⓟ
+\Q_cerclé	Ⓠ
+\R_cerclé	Ⓡ
+\S_cerclé	Ⓢ
+\T_cerclé	Ⓣ
+\U_cerclé	Ⓤ
+\V_cerclé	Ⓥ
+\W_cerclé	Ⓦ
+\X_cerclé	Ⓧ
+\Y_cerclé	Ⓨ
+\Z_cerclé	Ⓩ
+\a_cerclé	ⓐ
+\b_cerclé	ⓑ
+\c_cerclé	ⓒ
+\d_cerclé	ⓓ
+\e_cerclé	ⓔ
+\f_cerclé	ⓕ
+\g_cerclé	ⓖ
+\h_cerclé	ⓗ
+\i_cerclé	ⓘ
+\j_cerclé	ⓙ
+\k_cerclé	ⓚ
+\l_cerclé	ⓛ
+\m_cerclé	ⓜ
+\n_cerclé	ⓝ
+\o_cerclé	ⓞ
+\p_cerclé	ⓟ
+\q_cerclé	ⓠ
+\e_cerclé	ⓡ
+\s_cerclé	ⓢ
+\t_cerclé	ⓣ
+\u_cerclé	ⓤ
+\v_cerclé	ⓥ
+\w_cerclé	ⓦ
+\x_cerclé	ⓧ
+\y_cerclé	ⓨ
+\z_cerclé	ⓩ
+
+―――――――――――― Known issues
+* The comma is used as a prefix for the cedilla as in « ç » ; this means to type
+a normal single comma, you’ll have to type [,], then space to commit it, then 
+another space as is the convention after commas.
+* Dead key keyboard layouts may break Lys.
+
+―――――――――――― Problems
+* Lys might seem to not work sometimes even though the toolbar indicates it is 
+active. Depending on your SCIM setup, the shift key may cause the keyboard 
+layout to be changed, for example from FR to EN, which will cause the problem. 
+Just check the layout in the SCIM toolbar says FR and not EN or something else.
+
